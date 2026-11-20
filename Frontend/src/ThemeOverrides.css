@@ -1,0 +1,1166 @@
+
+/* Additions only. All original App.css and index.css rules are untouched. */
+
+.theme-toggle {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav-actions .login-link {
+  margin-left: 2px;
+  text-decoration: none;
+}
+
+.nav-actions .login-link:hover {
+  text-decoration: none;
+}
+
+/* Dark Mode Variables */
+
+:root[data-theme="dark"] {
+  --hd-dark-bg: #111d27;
+  --hd-dark-surface: #1d303a;
+  --hd-dark-text: #f1f5f9;
+  --hd-dark-muted: #cbd5e1;
+  --hd-dark-border: #45616b;
+}
+
+/* Dark Mode Layout */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root {
+  background: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .navbar {
+  background-color: #008b8b;
+}
+
+html[data-theme="dark"] .navbar .post-button,
+html[data-theme="dark"] .navbar .theme-toggle {
+  background: #eeeeee;
+  color: #111827;
+  border: 0;
+}
+
+html[data-theme="dark"] .navbar .post-button:hover {
+  background: #e0e0e0;
+  color: #111827;
+}
+
+html[data-theme="dark"] .navbar .logo a {
+  color: #111827;
+}
+
+html[data-theme="dark"] .navbar .search-box {
+  background: #fff;
+  color: #111827;
+  border-color: #ccc;
+}
+
+html[data-theme="dark"] main,
+html[data-theme="dark"] section:not(.opportunities-hero),
+html[data-theme="dark"] .browse-posts-page,
+html[data-theme="dark"] .new-post-page {
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+  color: var(--hd-dark-text);
+}
+
+/* Dark Mode Sections */
+
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .work-section,
+html[data-theme="dark"] .gallery-section,
+html[data-theme="dark"] .articles-section,
+html[data-theme="dark"] .tutorials-section,
+html[data-theme="dark"] .newsletter-section,
+html[data-theme="dark"] .contact-section {
+  background: var(--hd-dark-bg);
+}
+
+/* Dark Mode Cards and Forms */
+
+html[data-theme="dark"] .post-form,
+html[data-theme="dark"] .browse-post-card,
+html[data-theme="dark"] .browse-posts-controls,
+html[data-theme="dark"] .browse-posts-results,
+html[data-theme="dark"] .article-card,
+html[data-theme="dark"] .tutorial-card,
+html[data-theme="dark"] .work-card {
+  background: var(--hd-dark-surface);
+  color: var(--hd-dark-text);
+  border-color: var(--hd-dark-border);
+}
+
+html[data-theme="dark"] .post-form input,
+html[data-theme="dark"] .post-form textarea,
+html[data-theme="dark"] .post-form select,
+html[data-theme="dark"] .browse-posts-page input,
+html[data-theme="dark"] .browse-posts-page select {
+  background: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+  border-color: var(--hd-dark-border);
+}
+
+/* Post Image Picker */
+
+.post-image-picker {
+  max-width: 850px;
+  margin: 18px auto;
+  padding: 20px;
+  border: 1px dashed #a4c1c2;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.post-image-picker label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.post-image-picker p {
+  font-size: 14px;
+}
+
+.post-image-picker input {
+  max-width: 100%;
+}
+
+/* Image Preview */
+
+.post-image-preview {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.post-image-preview img {
+  max-width: 260px;
+  max-height: 190px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.post-image-preview button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Published Post Images */
+
+.browse-post-image {
+  display: block;
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  margin: 18px auto;
+  border-radius: 6px;
+}
+
+/* Form Error Messages */
+
+.form-error {
+  color: #dc2626 !important;
+}
+
+/* Responsive Navigation */
+
+@media (max-width: 1100px) {
+  .navbar {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 16px !important;
+  }
+
+  .nav-actions {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    width: 145px;
+  }
+}
+
+/* Only fix original index.css's bounded root for the full-width website, as in prior build. */
+
+#root {
+  width: 100%;
+  max-width: none;
+  border: 0;
+  text-align: left;
+}
+
+/* Explicit light mode overrides OS dark-mode preferences from the original index.css. */
+
+:root[data-theme="light"] {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170,59,255,.1);
+  --accent-border: rgba(170,59,255,.5);
+  --social-bg: rgba(244,243,236,.5);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --text: #d3dae2;
+  --text-h: #f3f4f6;
+  --bg: #111d27;
+  --border: #45616b;
+  --code-bg: #1f303b;
+  --accent: #74e0d9;
+  --accent-bg: rgba(116,224,217,.15);
+  --accent-border: rgba(116,224,217,.5);
+  --social-bg: rgba(47,48,58,.5);
+  color-scheme: dark;
+}
+
+/* Dark Mode Improvements */
+
+html[data-theme="dark"] {
+  --hd-dark-bg: #111d27;
+  --hd-dark-surface: #1d303a;
+  --hd-dark-text: #f1f5f9;
+  --hd-dark-muted: #b8c7d1;
+  --hd-dark-border: #45616b;
+}
+
+/* General Text Visibility */
+
+html[data-theme="dark"] body {
+  background-color: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] main p,
+html[data-theme="dark"] main li,
+html[data-theme="dark"] main label {
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] main h1,
+html[data-theme="dark"] main h2,
+html[data-theme="dark"] main h3,
+html[data-theme="dark"] main h4 {
+  color: var(--hd-dark-text);
+}
+
+/* Homepage Sections */
+
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .work-section,
+html[data-theme="dark"] .gallery-section,
+html[data-theme="dark"] .articles-section,
+html[data-theme="dark"] .tutorials-section,
+html[data-theme="dark"] .newsletter-section,
+html[data-theme="dark"] .contact-section {
+  background-color: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .about-section p,
+html[data-theme="dark"] .work-section p,
+html[data-theme="dark"] .gallery-section p,
+html[data-theme="dark"] .articles-section p,
+html[data-theme="dark"] .tutorials-section p {
+  color: var(--hd-dark-muted);
+}
+
+/* Browse Posts */
+
+html[data-theme="dark"] .browse-posts-page {
+  background-color: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .browse-posts-page h1,
+html[data-theme="dark"] .browse-posts-page h2,
+html[data-theme="dark"] .browse-posts-page h3 {
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .browse-post-card,
+html[data-theme="dark"] .browse-posts-controls,
+html[data-theme="dark"] .browse-posts-results {
+  background-color: var(--hd-dark-surface);
+  border-color: var(--hd-dark-border);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .browse-post-card p,
+html[data-theme="dark"] .browse-post-card small,
+html[data-theme="dark"] .browse-posts-page > p {
+  color: var(--hd-dark-muted);
+}
+
+/* Post Filters */
+
+html[data-theme="dark"] .browse-posts-page input,
+html[data-theme="dark"] .browse-posts-page select,
+html[data-theme="dark"] .browse-posts-page textarea {
+  background-color: #111d27;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .browse-posts-page input::placeholder {
+  color: #a5b4c0;
+}
+
+/* Post Form */
+
+html[data-theme="dark"] .post-form {
+  background-color: var(--hd-dark-surface);
+  color: var(--hd-dark-text);
+  border-color: var(--hd-dark-border);
+}
+
+html[data-theme="dark"] .post-form input,
+html[data-theme="dark"] .post-form textarea,
+html[data-theme="dark"] .post-form select {
+  background-color: var(--hd-dark-bg);
+  color: var(--hd-dark-text);
+  border-color: var(--hd-dark-border);
+}
+
+/* Career Cards */
+
+html[data-theme="dark"] .opportunity-card,
+html[data-theme="dark"] .opportunities-premium,
+html[data-theme="dark"] .resource-grid a {
+  background-color: var(--hd-dark-surface);
+  color: var(--hd-dark-text);
+  border-color: var(--hd-dark-border);
+}
+
+html[data-theme="dark"] .opportunity-card p {
+  color: var(--hd-dark-muted);
+}
+
+/* Image Attachment */
+
+html[data-theme="dark"] .post-image-picker {
+  border-color: var(--hd-dark-border);
+  color: var(--hd-dark-text);
+}
+
+html[data-theme="dark"] .post-image-picker p,
+html[data-theme="dark"] .post-image-picker label {
+  color: var(--hd-dark-muted);
+}
+
+/* Navbar */
+
+html[data-theme="dark"] .navbar {
+  background-color: #008b8b;
+}
+
+html[data-theme="dark"] .navbar .post-button,
+html[data-theme="dark"] .navbar .theme-toggle {
+  background-color: #eeeeee;
+  color: #111827;
+}
+
+/* Focus Visibility */
+
+html[data-theme="dark"] input:focus-visible,
+html[data-theme="dark"] select:focus-visible,
+html[data-theme="dark"] textarea:focus-visible,
+html[data-theme="dark"] button:focus-visible {
+  outline: 2px solid #74e0d9;
+  outline-offset: 2px;
+}
+
+/* Dashboard Dark Mode */
+
+html[data-theme="dark"] .user-dashboard {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .user-dashboard-heading p,
+html[data-theme="dark"] .dashboard-section-heading p,
+html[data-theme="dark"] .dashboard-recent > p {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .dashboard-eyebrow {
+  color: #ffae83;
+}
+
+html[data-theme="dark"] .dashboard-profile,
+html[data-theme="dark"] .dashboard-stat-card,
+html[data-theme="dark"] .dashboard-post-card,
+html[data-theme="dark"] .dashboard-empty,
+html[data-theme="dark"] .dashboard-recent ul {
+  background: #1d303a;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .dashboard-profile h2,
+html[data-theme="dark"] .dashboard-post-card h3,
+html[data-theme="dark"] .dashboard-section-heading h2,
+html[data-theme="dark"] .dashboard-recent h2 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .dashboard-profile p,
+html[data-theme="dark"] .dashboard-stat-card p,
+html[data-theme="dark"] .dashboard-post-date,
+html[data-theme="dark"] .dashboard-post-engagement,
+html[data-theme="dark"] .dashboard-empty p,
+html[data-theme="dark"] .dashboard-recent li small,
+html[data-theme="dark"] .dashboard-recent li > span:last-child {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .dashboard-stat-card h3 {
+  color: #ffae83;
+}
+
+html[data-theme="dark"] .dashboard-post-engagement,
+html[data-theme="dark"] .dashboard-recent li {
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .dashboard-recent li strong {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .dashboard-plan.free {
+  background: #244461;
+  color: #dbeafe;
+}
+
+html[data-theme="dark"] .dashboard-plan.paid {
+  background: #534223;
+  color: #fde68a;
+}
+
+html[data-theme="dark"] .dashboard-post-type.question {
+  background: #244461;
+  color: #dbeafe;
+}
+
+html[data-theme="dark"] .dashboard-post-type.article {
+  background: #45345e;
+  color: #e9d5ff;
+}
+
+html[data-theme="dark"] .dashboard-post-status.published {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .dashboard-post-status.removed {
+  background: #572e35;
+  color: #fecaca;
+}
+
+html[data-theme="dark"] .dashboard-profile .profile-avatar {
+  background: #e66b32;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .dashboard-error {
+  background: #572e35;
+  color: #fecaca;
+}
+
+html[data-theme="dark"] .dashboard-message {
+  color: #b8c7d1;
+}
+
+
+/* Browse Posts Dark Mode */
+
+html[data-theme="dark"] .browse-posts-page {
+  background: #111d27;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .browse-posts-heading h1,
+html[data-theme="dark"] .browse-results-heading h2,
+html[data-theme="dark"] .browse-post-card h3,
+html[data-theme="dark"] .comments-content h4 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .browse-posts-heading p,
+html[data-theme="dark"] .browse-results-heading span,
+html[data-theme="dark"] .browse-post-meta,
+html[data-theme="dark"] .browse-post-abstract,
+html[data-theme="dark"] .browse-expanded-content,
+html[data-theme="dark"] .browse-empty {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .browse-posts-controls,
+html[data-theme="dark"] .browse-posts-results,
+html[data-theme="dark"] .browse-post-card {
+  background: #1d303a;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .browse-filter-grid label {
+  color: #d3dae2;
+}
+
+html[data-theme="dark"] .browse-posts-page input,
+html[data-theme="dark"] .browse-posts-page select,
+html[data-theme="dark"] .browse-posts-page textarea {
+  background: #111d27;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .browse-posts-page input::placeholder,
+html[data-theme="dark"] .browse-posts-page textarea::placeholder {
+  color: #a5b4c0;
+}
+
+html[data-theme="dark"] .browse-post-tags span {
+  background: #314a53;
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .browse-hide-button {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .browse-like-button {
+  background: #314a53;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .browse-like-button.liked {
+  background: #572e35;
+  color: #fecaca;
+  border-color: #e87987;
+}
+
+html[data-theme="dark"] .browse-locked-content {
+  background: #453721;
+  border-color: #8a6a37;
+}
+
+html[data-theme="dark"] .browse-locked-content h4 {
+  color: #fde68a;
+}
+
+html[data-theme="dark"] .browse-locked-content p {
+  color: #f5deb3;
+}
+
+html[data-theme="dark"] .post-comments {
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .comment-item,
+html[data-theme="dark"] .reply-item {
+  background: #253b46;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .comment-header strong,
+html[data-theme="dark"] .comment-text {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .comment-header span,
+html[data-theme="dark"] .comments-empty {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .comment-replies {
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .comments-toggle-button,
+html[data-theme="dark"] .reply-toggle-button {
+  color: #74e0d9;
+}
+
+
+/* Pricing Dark Mode */
+
+html[data-theme="dark"] .pricing-page {
+  background: #111d27;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-intro h1,
+html[data-theme="dark"] .pricing-page .pricing-card h2 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-intro > p:last-child,
+html[data-theme="dark"] .pricing-page .plan-description,
+html[data-theme="dark"] .pricing-page .plan-price small,
+html[data-theme="dark"] .pricing-page .pricing-note {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-eyebrow {
+  color: #74e0d9;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-card,
+html[data-theme="dark"] .pricing-page .pricing-card.paid-plan {
+  background: #1d303a;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-card.paid-plan {
+  border-color: #008b8b;
+}
+
+html[data-theme="dark"] .pricing-page .plan-price span,
+html[data-theme="dark"] .pricing-page .plan-features li {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .pricing-page .feature-check {
+  color: #74e0d9;
+}
+
+html[data-theme="dark"] .pricing-page .popular-label {
+  background: #244d51;
+  color: #dbfcf5;
+}
+
+html[data-theme="dark"] .pricing-page .free-button {
+  background: #314a53;
+  color: #d3dae2;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .pricing-page .paid-button {
+  background: #008b8b;
+  color: #ffffff;
+  border-color: #008b8b;
+}
+
+html[data-theme="dark"] .pricing-page .paid-button:hover {
+  background: #007575;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-success {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .pricing-page .pricing-error {
+  background: #572e35;
+  color: #fecaca;
+}
+
+
+/* Pricing Upgrade Modal Dark Mode */
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal {
+  background: #1d303a !important;
+  color: #f1f5f9 !important;
+  border-color: #45616b !important;
+}
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal h2 {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal .upgrade-description,
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal .demo-payment-note {
+  color: #b8c7d1 !important;
+}
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal .upgrade-form label {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal .upgrade-form input {
+  background: #111d27 !important;
+  color: #f1f5f9 !important;
+  border-color: #45616b !important;
+}
+
+html[data-theme="dark"] .upgrade-overlay .upgrade-modal .upgrade-close {
+  background: #314a53 !important;
+  color: #f1f5f9 !important;
+  border-color: #45616b !important;
+}
+
+/* Admin Dashboard Dark Mode */
+
+html[data-theme="dark"] .admin-dashboard,
+html[data-theme="dark"] .admin-dashboard-page,
+html[data-theme="dark"] .admin-page {
+  background: #111d27;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard h1,
+html[data-theme="dark"] .admin-dashboard h2,
+html[data-theme="dark"] .admin-dashboard h3,
+html[data-theme="dark"] .admin-dashboard-page h1,
+html[data-theme="dark"] .admin-dashboard-page h2,
+html[data-theme="dark"] .admin-dashboard-page h3 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard p,
+html[data-theme="dark"] .admin-dashboard-page p {
+  color: #b8c7d1;
+}
+
+/* Admin Dashboard Cards */
+
+html[data-theme="dark"] .admin-dashboard .stat-card,
+html[data-theme="dark"] .admin-dashboard .stats-card,
+html[data-theme="dark"] .admin-dashboard .dashboard-card,
+html[data-theme="dark"] .admin-dashboard-page .stat-card,
+html[data-theme="dark"] .admin-dashboard-page .stats-card,
+html[data-theme="dark"] .admin-dashboard-page .dashboard-card {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard .stat-card h3,
+html[data-theme="dark"] .admin-dashboard .stats-card h3,
+html[data-theme="dark"] .admin-dashboard-page .stat-card h3,
+html[data-theme="dark"] .admin-dashboard-page .stats-card h3 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard .stat-card p,
+html[data-theme="dark"] .admin-dashboard .stats-card p,
+html[data-theme="dark"] .admin-dashboard-page .stat-card p,
+html[data-theme="dark"] .admin-dashboard-page .stats-card p {
+  color: #b8c7d1;
+}
+
+/* Admin Dashboard Statistics */
+
+html[data-theme="dark"] .admin-dashboard .stat-value,
+html[data-theme="dark"] .admin-dashboard .stat-number,
+html[data-theme="dark"] .admin-dashboard .stat-count,
+html[data-theme="dark"] .admin-dashboard-page .stat-value,
+html[data-theme="dark"] .admin-dashboard-page .stat-number,
+html[data-theme="dark"] .admin-dashboard-page .stat-count {
+  color: #f1f5f9;
+}
+
+/* Admin Dashboard Navigation */
+
+html[data-theme="dark"] .admin-dashboard .admin-action,
+html[data-theme="dark"] .admin-dashboard .quick-action,
+html[data-theme="dark"] .admin-dashboard-page .admin-action,
+html[data-theme="dark"] .admin-dashboard-page .quick-action {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #74e0d9;
+}
+
+/* Admin Dashboard Tables */
+
+html[data-theme="dark"] .admin-dashboard table,
+html[data-theme="dark"] .admin-dashboard-page table {
+  background: #1d303a;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard th,
+html[data-theme="dark"] .admin-dashboard-page th {
+  background: #253b46;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-dashboard td,
+html[data-theme="dark"] .admin-dashboard-page td {
+  border-color: #45616b;
+  color: #d3dae2;
+}
+
+/* Admin Dashboard Form Controls */
+
+html[data-theme="dark"] .admin-dashboard input,
+html[data-theme="dark"] .admin-dashboard select,
+html[data-theme="dark"] .admin-dashboard textarea,
+html[data-theme="dark"] .admin-dashboard-page input,
+html[data-theme="dark"] .admin-dashboard-page select,
+html[data-theme="dark"] .admin-dashboard-page textarea {
+  background: #111d27;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+/* Admin Pages - Dark Mode */
+
+html[data-theme="dark"] .admin-page,
+html[data-theme="dark"] .admin-users-page,
+html[data-theme="dark"] .admin-posts-page {
+  background: #111d27;
+  color: #f1f5f9;
+}
+
+/* Admin Dashboard Headings */
+
+html[data-theme="dark"] .admin-welcome h1,
+html[data-theme="dark"] .admin-section-heading h2,
+html[data-theme="dark"] .admin-users-heading h1,
+html[data-theme="dark"] .admin-users-panel-heading h2,
+html[data-theme="dark"] .admin-posts-heading h1 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-welcome p,
+html[data-theme="dark"] .admin-section-heading p,
+html[data-theme="dark"] .admin-users-heading p,
+html[data-theme="dark"] .admin-users-panel-heading p,
+html[data-theme="dark"] .admin-posts-heading p {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-eyebrow,
+html[data-theme="dark"] .admin-section-label,
+html[data-theme="dark"] .admin-posts-eyebrow {
+  color: #74e0d9;
+}
+
+/* Admin Dashboard Statistic Cards */
+
+html[data-theme="dark"] .admin-stat-card,
+html[data-theme="dark"] .admin-overview-card,
+html[data-theme="dark"] .admin-loading {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-card-title,
+html[data-theme="dark"] .admin-card-description {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-stat-card h3 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-stat-card:hover {
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Subscription Overview */
+
+html[data-theme="dark"] .admin-subscription-bar {
+  background: #314a53;
+}
+
+html[data-theme="dark"] .admin-subscription-legend strong {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-subscription-legend p {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-footer-note {
+  color: #b8c7d1;
+  border-color: #45616b;
+}
+
+/* Admin Dashboard Navigation */
+
+html[data-theme="dark"] .admin-dashboard-action {
+  background: #1d303a;
+  color: #74e0d9 !important;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-dashboard-action:hover {
+  background: #078b89;
+  color: #ffffff !important;
+  border-color: #078b89;
+}
+
+/* User Management Statistics */
+
+html[data-theme="dark"] .admin-user-summary-card {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-user-summary-card h3 {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-user-summary-card strong {
+  color: #f1f5f9;
+}
+
+/* Registered Users Panel */
+
+html[data-theme="dark"] .admin-users-panel {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-users-panel-heading h2 {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-users-panel-heading p {
+  color: #b8c7d1;
+}
+
+/* User Search and Filters */
+
+html[data-theme="dark"] .admin-search-wrapper {
+  background: #111d27;
+  border-color: #45616b;
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-search-wrapper input {
+  background: transparent;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-search-wrapper input::placeholder {
+  color: #a5b4c0;
+}
+
+html[data-theme="dark"] .admin-user-filters select {
+  background: #111d27;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+/* Registered Users Table */
+
+html[data-theme="dark"] .admin-users-table-wrapper {
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-users-table {
+  background: #1d303a;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-users-table th {
+  background: #253b46;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-users-table td {
+  background: #1d303a;
+  color: #d3dae2;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-users-table tbody tr:hover td {
+  background: #314a53;
+}
+
+html[data-theme="dark"] .admin-user-name {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-user-email,
+html[data-theme="dark"] .admin-user-date,
+html[data-theme="dark"] .admin-role-user,
+html[data-theme="dark"] .admin-protected-label {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-back-link {
+  color: #74e0d9;
+}
+
+/* User Badges */
+
+html[data-theme="dark"] .admin-plan-badge.free {
+  background: #314a53;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-plan-badge.paid {
+  background: #244461;
+  color: #bfdbfe;
+}
+
+html[data-theme="dark"] .admin-role-badge {
+  background: #45345e;
+  color: #e9d5ff;
+}
+
+html[data-theme="dark"] .admin-status-badge.active {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .admin-status-badge.suspended {
+  background: #572e35;
+  color: #fecaca;
+}
+
+/* User Management Messages */
+
+html[data-theme="dark"] .admin-users-loading,
+html[data-theme="dark"] .admin-users-empty {
+  color: #b8c7d1 !important;
+}
+
+html[data-theme="dark"] .admin-users-alert.success {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .admin-users-alert.error {
+  background: #572e35;
+  color: #fecaca;
+}
+
+/* Content Management Statistics */
+
+html[data-theme="dark"] .admin-post-stat {
+  background: #1d303a;
+  border-color: #45616b;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-post-stat span {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-post-stat strong {
+  color: #f1f5f9;
+}
+
+/* Content Search and Filters */
+
+html[data-theme="dark"] .admin-posts-filters input,
+html[data-theme="dark"] .admin-posts-filters select {
+  background: #1d303a;
+  color: #f1f5f9;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-posts-filters input::placeholder {
+  color: #a5b4c0;
+}
+
+/* Content Moderation Table */
+
+html[data-theme="dark"] .admin-posts-table-wrapper {
+  background: #1d303a;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-posts-table {
+  background: #1d303a;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-posts-table th {
+  background: #253b46;
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-posts-table td {
+  background: #1d303a;
+  color: #d3dae2;
+  border-color: #45616b;
+}
+
+html[data-theme="dark"] .admin-posts-table td strong {
+  color: #f1f5f9;
+}
+
+html[data-theme="dark"] .admin-posts-table td small {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-posts-table tbody tr:hover td {
+  background: #314a53;
+}
+
+/* Content Status Badges */
+
+html[data-theme="dark"] .admin-post-type {
+  background: #244461;
+  color: #bfdbfe;
+}
+
+html[data-theme="dark"] .admin-post-status.published {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .admin-post-status.removed {
+  background: #572e35;
+  color: #fecaca;
+}
+
+/* Content Moderation Buttons */
+
+html[data-theme="dark"] .admin-post-remove {
+  background: #572e35;
+  color: #fecaca;
+}
+
+html[data-theme="dark"] .admin-post-restore {
+  background: #234a39;
+  color: #bbf7d0;
+}
+
+html[data-theme="dark"] .admin-post-remove:hover {
+  background: #713942;
+}
+
+html[data-theme="dark"] .admin-post-restore:hover {
+  background: #30634c;
+}
+
+/* Content Management Messages */
+
+html[data-theme="dark"] .admin-posts-message {
+  color: #b8c7d1;
+}
+
+html[data-theme="dark"] .admin-posts-error {
+  background: #572e35;
+  color: #fecaca;
+}
+
+/* Admin Form Focus */
+
+html[data-theme="dark"] .admin-users-page input:focus-visible,
+html[data-theme="dark"] .admin-users-page select:focus-visible,
+html[data-theme="dark"] .admin-posts-page input:focus-visible,
+html[data-theme="dark"] .admin-posts-page select:focus-visible {
+  outline: 2px solid #74e0d9;
+  outline-offset: 2px;
+}

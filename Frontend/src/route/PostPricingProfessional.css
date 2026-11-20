@@ -1,0 +1,89 @@
+/* DEV@Deakin | Create Post + Pricing professional UI
+   Scoped to .post-studio and .pricing-page to protect other routes. */
+:root { --pp-ink:#192b3f; --pp-muted:#63758b; --pp-teal:#087f80; --pp-deep:#08686b; --pp-border:#dfe9ec; --pp-soft:#f3f8f9; --pp-shadow:0 12px 36px rgba(17,47,65,.065); }
+/* CREATE POST */
+body:has(.post-studio) { background:#f7f9fb; }
+.new-post-page.post-studio { box-sizing:border-box; width:min(100% - 40px,1040px); max-width:1040px; margin:0 auto; padding:52px 0 82px; background:transparent; box-shadow:none; border:0; color:var(--pp-ink); }
+.post-studio .post-studio-header { margin:0 0 28px; padding:0; text-align:left; }
+.post-studio .post-studio-eyebrow { display:inline-block; margin-bottom:13px; color:#07868a; font-size:12px; letter-spacing:.14em; font-weight:800; }
+.post-studio .post-studio-header h1 { margin:0 0 12px; padding:0; border:0; background:none; font-size:clamp(32px,4vw,45px); line-height:1.12; letter-spacing:-1.7px; color:var(--pp-ink); font-weight:800; }
+.post-studio .post-studio-header p { margin:0; max-width:740px; font-size:16px; line-height:1.75; color:var(--pp-muted); }
+.post-studio .post-studio-panel,.post-studio .post-studio-editor { background:#fff; border:1px solid var(--pp-border); border-radius:20px; padding:30px 34px; box-shadow:var(--pp-shadow); margin:0 0 22px; }
+.post-studio .post-studio-settings-header { margin:0 0 22px; }
+.post-studio .post-studio-settings-header h2 { color:var(--pp-ink); font-size:21px; font-weight:750; line-height:1.25; letter-spacing:-.5px; margin:0 0 6px; }
+.post-studio .post-studio-settings-header p { margin:0; color:var(--pp-muted); font-size:14px; line-height:1.6; }
+.post-studio .post-type-selector,.post-studio .post-plan-selector { box-sizing:border-box; display:grid; grid-template-columns:minmax(130px,.7fr) 1fr 1fr; align-items:center; gap:10px; padding:16px 0; margin:0; background:transparent; border:0; color:var(--pp-ink); font-size:15px; }
+.post-studio .post-plan-selector { border-top:1px solid var(--pp-border); }
+.post-studio .post-selector-heading { font-size:14px; color:#34485e; font-weight:750; }
+.post-studio .post-type-selector label,.post-studio .post-plan-selector label { display:flex; align-items:center; justify-content:flex-start; gap:10px; cursor:pointer; margin:0; padding:12px 15px; border:1px solid var(--pp-border); border-radius:11px; background:#f9fbfc; font-size:14px; font-weight:600; transition:border-color .2s,background .2s; }
+.post-studio .post-type-selector label:has(input:checked),.post-studio .post-plan-selector label:has(input:checked) { border-color:#8ec9c9; background:#edf9f8; color:#066c70; }
+.post-studio input[type="radio"] { width:17px; height:17px; margin:0; accent-color:var(--pp-teal); }
+.post-studio .post-image-picker { box-sizing:border-box; max-width:none; margin:0 0 26px; padding:22px 24px; background:#f8fbfc; border:1.5px dashed #b9d5d9; border-radius:14px; }
+.post-studio .post-image-picker label { margin-bottom:7px; color:var(--pp-ink); font-size:16px; font-weight:750; }
+.post-studio .post-image-picker p { margin:0 0 14px; color:var(--pp-muted); font-size:13px; line-height:1.65; }
+.post-studio .post-image-picker input[type="file"] { width:100%; color:#4f6476; font-size:13px; }
+.post-studio .post-image-picker input[type="file"]::file-selector-button { margin-right:12px; border:1px solid #b9d5d9; padding:9px 14px; border-radius:8px; background:#fff; color:#086a6c; font-weight:700; cursor:pointer; }
+.post-studio .post-image-preview { margin-top:20px; }
+.post-studio .post-image-preview img { max-width:min(100%,340px); max-height:260px; object-fit:contain; border-radius:12px; }
+.post-studio .post-form { box-sizing:border-box; max-width:none; width:100%; margin:0; padding:0; display:flex; flex-direction:column; gap:0; background:transparent; border:0; box-shadow:none; }
+.post-studio .post-form h2 { font-size:20px; font-weight:750; letter-spacing:-.45px; margin:0 0 5px; color:var(--pp-ink); }
+.post-studio .post-form > p:not([role]) { font-size:14px; line-height:1.6; color:var(--pp-muted); margin:0 0 26px; }
+.post-studio .post-form label { margin:0 0 8px; color:#34485e; font-size:14px; font-weight:700; }
+.post-studio .post-form input,.post-studio .post-form textarea { box-sizing:border-box; width:100%; margin:0 0 23px; padding:14px 16px; border:1px solid #d3e0e5; background:#fff; border-radius:11px; font-size:15px; line-height:1.6; color:var(--pp-ink); font-family:inherit; color-scheme:light; transition:border-color .2s,box-shadow .2s; }
+.post-studio .post-form input { min-height:52px; }
+.post-studio .post-form textarea { min-height:140px; resize:vertical; }
+.post-studio .post-form input:focus,.post-studio .post-form textarea:focus { outline:0; border-color:var(--pp-teal); box-shadow:0 0 0 4px rgba(8,127,128,.11); }
+.post-studio .post-form input::placeholder,.post-studio .post-form textarea::placeholder { color:#8c9ca9; }
+.post-studio .post-form button { display:inline-flex; align-items:center; align-self:flex-end; justify-content:center; min-width:190px; min-height:48px; margin:2px 0 0; padding:12px 24px; border:1px solid var(--pp-teal); border-radius:10px; background:var(--pp-teal); color:#fff; font-size:14px; font-weight:750; cursor:pointer; transition:background .2s, transform .2s; }
+.post-studio .post-form button:hover { background:var(--pp-deep); transform:translateY(-1px); }
+.post-studio .post-form [role="status"] { margin:16px 0 0; font-size:14px; color:var(--pp-muted); }
+/* PRICING */
+.pricing-page { box-sizing:border-box; width:min(100% - 36px,1080px); max-width:1080px; min-height:auto; margin:0 auto; padding:62px 0 80px; background:transparent; color:var(--pp-ink); }
+.pricing-page .pricing-intro { padding:0 0 24px; text-align:center; }
+.pricing-page .pricing-eyebrow { margin:0 0 13px; font-size:12px; letter-spacing:.18em; font-weight:800; color:var(--pp-teal); }
+.pricing-page .pricing-intro h1 { margin:0 0 15px; color:var(--pp-ink); font-weight:800; font-size:clamp(33px,4.5vw,49px); letter-spacing:-1.8px; line-height:1.13; }
+.pricing-page .pricing-intro>p:last-child { max-width:640px; margin:0 auto; color:var(--pp-muted); font-size:16px; line-height:1.75; }
+.pricing-page .pricing-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; gap:24px; max-width:960px; margin:22px auto 25px; }
+.pricing-page .pricing-card { box-sizing:border-box; position:relative; display:flex; flex-direction:column; padding:37px; border:1px solid var(--pp-border); border-radius:19px; background:#fff; text-align:left; box-shadow:var(--pp-shadow); transition:transform .2s,box-shadow .2s; }
+.pricing-page .pricing-card:hover { transform:translateY(-4px); box-shadow:0 18px 42px rgba(17,47,65,.12); }
+.pricing-page .pricing-card.paid-plan { border:1.5px solid #58b1ad; background:linear-gradient(165deg,#eefbf9 0%,#fff 55%); }
+.pricing-page .pricing-card h2 { margin:0 0 7px; color:var(--pp-ink); font-size:25px; font-weight:780; letter-spacing:-.6px; }
+.pricing-page .popular-label { order:0; display:inline-flex; width:max-content; margin:0 0 18px; padding:7px 12px; border-radius:99px; background:#d4f1ec; color:#086f6d; font-size:11px; font-weight:800; letter-spacing:.07em; }
+.pricing-page .plan-description { min-height:44px; margin:0 0 16px; color:var(--pp-muted); font-size:14px; line-height:1.65; }
+.pricing-page .plan-price { display:flex; align-items:baseline; gap:8px; margin:0 0 25px; padding-bottom:25px; border-bottom:1px solid var(--pp-border); }
+.pricing-page .plan-price span { color:var(--pp-ink); font-size:45px; line-height:1; letter-spacing:-1.5px; font-weight:800; }
+.pricing-page .plan-price small { color:var(--pp-muted); font-size:13px; }
+.pricing-page .plan-features { display:flex; flex-direction:column; gap:17px; flex:1; list-style:none; margin:0 0 35px; padding:0; }
+.pricing-page .plan-features li { display:flex; gap:12px; align-items:flex-start; color:#3c4d5f; font-size:14px; line-height:1.6; }
+.pricing-page .feature-check { width:21px; height:21px; flex:0 0 21px; display:grid; place-items:center; background:#e6f7f2; color:#087c75; border-radius:50%; font-size:13px; font-weight:800; }
+.pricing-page .pricing-button { box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center; width:100%; min-height:49px; padding:12px 19px; border-radius:10px; font-size:14px; font-weight:750; }
+.pricing-page .pricing-button.free-button { background:#f2f6f8; color:#778ba0; border:1px solid var(--pp-border); }
+.pricing-page .pricing-button.paid-button { background:var(--pp-teal); color:#fff; border:1px solid var(--pp-teal); }
+.pricing-page .pricing-button.paid-button:hover:not(:disabled) { background:var(--pp-deep); border-color:var(--pp-deep); }
+.pricing-page .pricing-note { max-width:690px; margin:0 auto; padding:11px 15px; color:#64758a; text-align:center; line-height:1.7; font-size:12px; }
+.pricing-page .pricing-success,.pricing-page .pricing-error { border-radius:10px; padding:14px 17px; }
+/* UPGRADE DIALOG — styles are intentionally targeted to original modal classes */
+.upgrade-overlay .upgrade-modal { border-radius:20px !important; padding:34px !important; }
+.upgrade-overlay .upgrade-modal h2 { color:#192b3f !important; font-weight:780 !important; letter-spacing:-.7px !important; }
+.upgrade-overlay .upgrade-modal .upgrade-form input { min-height:46px !important; border-radius:10px !important; }
+.upgrade-overlay .upgrade-modal .upgrade-form input:focus { outline:2px solid rgba(8,127,128,.35); outline-offset:1px; }
+.upgrade-overlay .upgrade-modal .upgrade-form .pricing-button { background:var(--pp-teal) !important; border-radius:10px !important; }
+/* Dark mode */
+html[data-theme="dark"] body:has(.post-studio) { background:#111d27; }
+html[data-theme="dark"] .post-studio .post-studio-header h1,html[data-theme="dark"] .post-studio .post-studio-settings-header h2,html[data-theme="dark"] .post-studio .post-form h2 { color:#eff6f9; }
+html[data-theme="dark"] .post-studio .post-studio-panel,html[data-theme="dark"] .post-studio .post-studio-editor { background:#1d303a; border-color:#425863; }
+html[data-theme="dark"] .post-studio .post-studio-header p,html[data-theme="dark"] .post-studio .post-studio-settings-header p,html[data-theme="dark"] .post-studio .post-form>p:not([role]) { color:#aec4d0; }
+html[data-theme="dark"] .post-studio .post-selector-heading,html[data-theme="dark"] .post-studio .post-form label,html[data-theme="dark"] .post-studio .post-image-picker label { color:#e0ebef; }
+html[data-theme="dark"] .post-studio .post-type-selector label,html[data-theme="dark"] .post-studio .post-plan-selector label,html[data-theme="dark"] .post-studio .post-image-picker { background:#263d47; border-color:#45606c; color:#e4eef3; }
+html[data-theme="dark"] .post-studio .post-type-selector label:has(input:checked),html[data-theme="dark"] .post-studio .post-plan-selector label:has(input:checked) { background:#1d4c4e; color:#b8ffed; border-color:#68bab4; }
+html[data-theme="dark"] .post-studio .post-form { background:transparent; }
+html[data-theme="dark"] .post-studio .post-form input,html[data-theme="dark"] .post-studio .post-form textarea { background:#142631; color:#eff6f9; border-color:#46616c; color-scheme:dark; }
+html[data-theme="dark"] .pricing-page { color:#e2edf2; }
+html[data-theme="dark"] .pricing-page .pricing-intro h1,html[data-theme="dark"] .pricing-page .pricing-card h2,html[data-theme="dark"] .pricing-page .plan-price span { color:#f1f7f9; }
+html[data-theme="dark"] .pricing-page .pricing-card,html[data-theme="dark"] .pricing-page .pricing-card.paid-plan { background:#1c303a; border-color:#45616b; }
+html[data-theme="dark"] .pricing-page .pricing-card.paid-plan { border-color:#52b3ae; }
+html[data-theme="dark"] .pricing-page .plan-features li { color:#d4e3e9; }
+html[data-theme="dark"] .pricing-page .plan-price { border-color:#45616b; }
+/* Responsive */
+@media(max-width:750px) { .new-post-page.post-studio { width:calc(100% - 28px); padding:32px 0 56px; } .post-studio .post-studio-panel,.post-studio .post-studio-editor { padding:22px 18px; border-radius:15px; } .post-studio .post-type-selector,.post-studio .post-plan-selector { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; } .post-studio .post-selector-heading { grid-column:1/-1; } .post-studio .post-form button { width:100%; } .pricing-page { width:calc(100% - 28px); padding:39px 0 60px; } .pricing-page .pricing-grid { grid-template-columns:1fr; gap:18px; max-width:480px; } .pricing-page .pricing-card { padding:28px 25px; } }
+@media(prefers-reduced-motion:reduce) { .pricing-page .pricing-card,.post-studio .post-form button { transition:none; transform:none !important; } }

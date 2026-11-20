@@ -1,0 +1,20 @@
+
+/* Edit links use the existing DEV@Deakin teal accent. */
+
+.dashboard-edit-post,
+.browse-edit-post {
+  display: inline-block;
+  padding: 7px 12px;
+  margin: 8px 0;
+  border: 1px solid #008b8b;
+  border-radius: 3px;
+  color: #007c80;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+html[data-theme="dark"] .dashboard-edit-post,
+html[data-theme="dark"] .browse-edit-post {
+  color: #74e0d9;
+  border-color: #45616b;
+}

@@ -1,0 +1,119 @@
+/* DEV@Deakin professional authentication — isolated to login/signup */
+.login-page, .signup-page {
+  --auth-ink:#17283b; --auth-teal:#078487; --auth-teal-dark:#066b70;
+  --auth-muted:#637587; --auth-border:#d9e5e9;
+  box-sizing:border-box;
+  width:100%; min-height:calc(100vh - 82px); max-width:none;
+  margin:0; padding:64px 22px 88px;
+  display:flex; justify-content:center; align-items:flex-start;
+  background:radial-gradient(circle at 18% 12%,rgba(8,132,135,.07),transparent 34%),#f6f9fa;
+  color:var(--auth-ink);
+}
+.login-page *, .signup-page * { box-sizing:border-box; }
+.login-page .login-container, .signup-page .signup-container {
+  width:min(100%,472px); max-width:472px; min-width:0;
+  margin:0; padding:38px 40px 34px;
+  text-align:left; background:#fff; border:1px solid var(--auth-border);
+  border-radius:20px; box-shadow:0 18px 48px rgba(28,53,70,.09);
+}
+.login-page .auth-kicker, .signup-page .auth-kicker {
+  display:block; margin:0 0 12px; color:var(--auth-teal);
+  font-size:11px; font-weight:800; letter-spacing:.15em; text-transform:uppercase;
+}
+.login-page .login-container h1, .signup-page .signup-container h1 {
+  margin:0 0 9px; padding:0; text-align:left; color:var(--auth-ink);
+  font-size:clamp(28px,3.5vw,35px); line-height:1.2; letter-spacing:-.9px; font-weight:750;
+}
+.login-page .auth-lead, .signup-page .auth-lead {
+  margin:0 0 27px; color:var(--auth-muted); line-height:1.65; font-size:14px;
+}
+.login-page .login-form, .signup-page .signup-form {
+  width:100%; max-width:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:0; align-items:stretch;
+}
+.login-page .login-form .form-row, .signup-page .signup-form .form-row {
+  display:flex; flex-direction:column; align-items:stretch;
+  gap:8px; width:100%; margin:0 0 17px;
+}
+.login-page .login-form .form-row label, .signup-page .signup-form .form-row label {
+  display:block; width:100%; margin:0; padding:0;
+  text-align:left; font-size:13px; font-weight:700; color:#314559;
+}
+.login-page .login-form .form-row input, .signup-page .signup-form .form-row input {
+  display:block; width:100%; max-width:none; min-width:0; height:48px;
+  padding:11px 14px; background:#fff; color:var(--auth-ink);
+  border:1px solid #cfdee5; border-radius:10px;
+  font:inherit; font-size:15px; transition:border-color .2s,box-shadow .2s;
+}
+.login-page .login-form .form-row input:focus, .signup-page .signup-form .form-row input:focus {
+  outline:none; border-color:var(--auth-teal); box-shadow:0 0 0 3px rgba(7,132,135,.12);
+}
+.login-page .login-form > button[type=submit], .signup-page .signup-form > button[type=submit] {
+  display:block; width:100%; max-width:none; min-height:49px;
+  margin:12px 0 0; padding:12px 18px;
+  background:var(--auth-teal); color:white; border:1px solid var(--auth-teal);
+  border-radius:10px; font:inherit; font-weight:750; font-size:15px; cursor:pointer;
+  transition:background .2s,transform .2s;
+}
+.login-page .login-form > button[type=submit]:hover:not(:disabled), .signup-page .signup-form > button[type=submit]:hover:not(:disabled) {
+  background:var(--auth-teal-dark); transform:translateY(-1px);
+}
+.login-page .login-form > button:disabled, .signup-page .signup-form > button:disabled,
+.login-page .google-login-button:disabled, .signup-page .google-signup-button:disabled {opacity:.58; cursor:not-allowed;}
+.login-page .forgot-password-link { display:block; width:max-content; align-self:flex-end; margin:0 0 2px; color:var(--auth-teal); font-size:13px; font-weight:650; text-decoration:none; }
+.login-page .forgot-password-link:hover { text-decoration:underline; }
+.login-page .login-divider, .signup-page .signup-divider {
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  width:100%; max-width:none; margin:24px 0 20px;
+  color:#8594a2; font-size:12px; font-weight:700;
+}
+.login-page .login-divider::before, .login-page .login-divider::after,
+.signup-page .signup-divider::before, .signup-page .signup-divider::after {
+  content:""; height:1px; flex:1; background:var(--auth-border);
+}
+.login-page .google-login-button, .signup-page .google-signup-button {
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  width:100%; max-width:none; height:49px; min-height:49px; margin:0;
+  background:#fff; border:1px solid #ccdbe2; border-radius:10px;
+  color:#253548; font:inherit; font-size:14px; font-weight:700;
+  box-shadow:none; cursor:pointer; transition:background .2s,border-color .2s;
+}
+.login-page .google-login-button:hover:not(:disabled), .signup-page .google-signup-button:hover:not(:disabled) {
+  background:#f4f9fa; border-color:#96cacc; transform:none;
+}
+.login-page .google-icon, .signup-page .google-signup-button svg {width:20px;height:20px;flex-shrink:0;}
+.login-page .login-container > p:not(.auth-lead):not(.form-error),
+.signup-page .signup-container > p:not(.auth-lead):not(.form-error) {
+  margin:25px 0 0; text-align:center; font-size:14px; color:var(--auth-muted);
+}
+.login-page .login-container > p a, .signup-page .signup-container > p a {
+  color:var(--auth-teal); font-weight:750; text-decoration:none;
+}
+.login-page .login-container > p a:hover, .signup-page .signup-container > p a:hover {text-decoration:underline;}
+.login-page .form-error, .signup-page .form-error {
+  margin:0 0 18px; padding:12px 14px; border:1px solid #fecdd3;
+  border-radius:10px; background:#fff1f2; color:#9f1239; font-size:13px; line-height:1.55;
+}
+.signup-page .auth-success {
+  padding:12px 14px; margin:0 0 18px; border:1px solid #abdfc9;
+  border-radius:10px; background:#ecfdf5; color:#166747; font-size:13px;
+}
+.login-page .auth-challenge-copy {margin:0 0 22px; color:var(--auth-muted); font-size:14px;line-height:1.7;}
+.login-page .login-form > button[type=button] {
+  display:block; width:100%; min-height:44px; margin-top:10px;
+  background:transparent; border:1px solid var(--auth-border);
+  border-radius:10px; color:var(--auth-ink); font-weight:700; cursor:pointer;
+}
+.login-page .login-form > button[type=button]:hover:not(:disabled) {background:#f3f8f9;}
+@media(max-width:540px){
+ .login-page,.signup-page {padding:28px 14px 52px; min-height:calc(100vh - 70px);}
+ .login-page .login-container,.signup-page .signup-container {padding:29px 23px; border-radius:16px;}
+}
+/* Respect the app-wide dark-mode switch */
+html[data-theme="dark"] .login-page,html[data-theme="dark"] .signup-page {--auth-ink:#f0f6f8;--auth-muted:#bacbd3;--auth-border:#3d5964;background:#111f29;color:var(--auth-ink);}
+html[data-theme="dark"] .login-page .login-container,html[data-theme="dark"] .signup-page .signup-container {background:#1d333e;border-color:#3d5964;}
+html[data-theme="dark"] .login-page .login-container h1,html[data-theme="dark"] .signup-page .signup-container h1,
+html[data-theme="dark"] .login-page .login-form .form-row label,html[data-theme="dark"] .signup-page .signup-form .form-row label {color:#f1f6f8;}
+html[data-theme="dark"] .login-page .login-form .form-row input,html[data-theme="dark"] .signup-page .signup-form .form-row input {background:#243e49;border-color:#48626b;color:#fff;color-scheme:dark;}
+html[data-theme="dark"] .login-page .google-login-button,html[data-theme="dark"] .signup-page .google-signup-button,html[data-theme="dark"] .login-page .login-form > button[type=button] {background:#293e49;border-color:#4c6570;color:#f1f7f8;}
+html[data-theme="dark"] .login-page .login-container > p:not(.auth-lead),html[data-theme="dark"] .signup-page .signup-container > p:not(.auth-lead) {color:#bed0d7;}

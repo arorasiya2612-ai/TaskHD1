@@ -1,0 +1,514 @@
+/* DEV@Deakin â€” Consolidated editorial homepage design.
+   Requires <main class="dev-home"> in HomePage.jsx.
+   Loaded after App.css and ThemeOverrides.css. */
+:root {
+  --home-ink: #14283b;
+  --home-muted: #5b6e80;
+  --home-teal: #087f80;
+  --home-teal-dark: #066668;
+  --home-pale: #f3f8f9;
+  --home-line: #dfe9ee;
+  --home-card: #fff;
+}
+.dev-home {font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:var(--home-ink);min-width:0;}
+.dev-home *, .site-footer *, .site-nav * {box-sizing:border-box;}
+.dev-home .home-shell {width:min(1160px,calc(100% - 64px));max-width:1160px;margin-inline:auto;}
+.dev-home section:not(.home-hero) {padding:clamp(72px,7vw,112px) 0;margin:0;scroll-margin-top:84px;}
+.dev-home .home-eyebrow {display:block;color:var(--home-teal);font-size:11px;font-weight:800;line-height:1.4;letter-spacing:.18em;margin:0 0 14px;text-transform:uppercase;}
+.dev-home h2 {font-size:clamp(32px,3.5vw,46px);font-weight:780;letter-spacing:-.055em;line-height:1.14;margin:0 0 14px;color:var(--home-ink);}
+.dev-home h3 {font-size:21px;line-height:1.35;letter-spacing:-.03em;font-weight:720;color:var(--home-ink);margin:0;}
+.dev-home .home-section-heading {display:block;margin:0 0 36px;}
+.dev-home .home-section-description, .dev-home .section-subtitle {max-width:650px;color:var(--home-muted);font-size:16px;line-height:1.7;margin:0;}
+.dev-home p {font-family:inherit;}
+/* HERO: editorial split replaces image-only banner */
+.dev-home .home-hero {padding:38px 32px 0;margin:0;background:linear-gradient(180deg,#f3f8f9 0%,#fff 100%);}
+.dev-home .home-hero-inner {max-width:1280px;min-height:520px;margin:0 auto;display:grid;grid-template-columns:1.04fr .96fr;background:#eaf3f4;border:1px solid #e0edef;border-radius:26px;overflow:hidden;box-shadow:0 22px 56px rgba(16,54,65,.075);}
+.dev-home .home-hero-copy {padding:clamp(35px,5vw,76px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;}
+.dev-home .home-hero-kicker {display:flex;align-items:center;gap:9px;color:#087477;font-size:10px;font-weight:800;letter-spacing:.15em;line-height:1.5;}
+.dev-home .home-hero-dot {display:inline-block;width:8px;height:8px;border-radius:50%;background:#087f80;box-shadow:0 0 0 4px rgba(8,127,128,.12);}
+.dev-home .home-hero h1 {max-width:610px;color:#12293e;font-size:clamp(41px,4.4vw,66px);font-weight:800;letter-spacing:-.068em;line-height:1.06;margin:25px 0 22px;}
+.dev-home .home-hero h1 span {color:#087f80;}
+.dev-home .home-hero-copy>p {max-width:505px;font-size:16px;line-height:1.85;color:#526a7b;margin:0 0 28px;}
+.dev-home .home-hero-actions {display:flex;flex-wrap:wrap;gap:11px;margin-bottom:34px;}
+.dev-home .home-btn {display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:46px;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:750;text-decoration:none;transition:transform .2s,background .2s;}
+.dev-home .home-btn:hover {transform:translateY(-2px);}
+.dev-home .home-btn-primary {background:#087f80;color:#fff;border:1px solid #087f80;}
+.dev-home .home-btn-primary:hover {background:#066668;color:#fff;}
+.dev-home .home-btn-secondary {background:#fff;color:#274c5b;border:1px solid #cddde2;}
+.dev-home .home-btn-secondary:hover {background:#f6fbfb;color:#087f80;}
+.dev-home .home-hero-note {display:flex;align-items:center;gap:12px;color:#69828c;font-size:10px;letter-spacing:.14em;font-weight:700;}
+.dev-home .home-hero-note-line {width:34px;height:1px;background:#a4bdc4;}
+.dev-home .home-hero-image {position:relative;min-height:500px;overflow:hidden;background:#bfd4db;}
+.dev-home .home-hero-image::after {content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(12,37,49,.55));pointer-events:none;}
+.dev-home .home-hero-image img {width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:55% center;}
+.dev-home .home-hero-image-caption {position:absolute;right:28px;bottom:25px;z-index:1;color:#fff;background:rgba(12,37,49,.28);backdrop-filter:blur(8px);padding:10px 14px;border:1px solid rgba(255,255,255,.25);border-radius:8px;font-size:12px;font-weight:600;}
+/* ABOUT: two columns on desktop, avoids repetitive giant centered heading */
+.dev-home .about-section {background:#fff;}
+.dev-home .about-layout {display:grid;grid-template-columns:320px minmax(0,1fr);gap:clamp(45px,8vw,120px);align-items:center;max-width:1000px;}
+.dev-home .about-portrait {max-width:320px;aspect-ratio:4/4.7;border-radius:24px;padding:12px;background:#eaf3f4;box-shadow:0 14px 34px rgba(16,54,65,.08);}
+.dev-home .about-portrait img {width:100%;height:100%;object-fit:cover;border-radius:15px;}
+.dev-home .about-content h2 {margin:0 0 23px;}
+.dev-home .about-content h2 span {color:var(--home-teal);}
+.dev-home .about-content .about-lead {color:#293f51;font-size:18px;font-weight:600;line-height:1.65;margin:0 0 12px;}
+.dev-home .about-content p:not(.about-lead) {color:var(--home-muted);line-height:1.86;font-size:15px;margin:0 0 23px;}
+.dev-home .home-text-link {color:var(--home-teal);font-size:14px;font-weight:760;display:inline-flex;gap:12px;align-items:center;}
+.dev-home .home-text-link:hover {color:var(--home-teal-dark);}
+/* Sections alternate, consistent content widths */
+.dev-home .work-section, .dev-home .articles-section {background:#f5f8f9;}
+.dev-home .gallery-section, .dev-home .tutorials-section {background:#fff;}
+.dev-home .project-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:100%;}
+.dev-home .project-card,.dev-home .article-card,.dev-home .tutorial-card {display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #e2ebee;border-radius:17px;overflow:hidden;box-shadow:0 8px 26px rgba(17,43,55,.048);transition:transform .2s,box-shadow .2s;}
+.dev-home .project-card:hover,.dev-home .article-card:hover,.dev-home .tutorial-card:hover {transform:translateY(-4px);box-shadow:0 17px 36px rgba(17,43,55,.10);}
+.dev-home .project-image {height:252px;padding:18px;background:#f0f5f7;border-bottom:1px solid #e2ebee;display:flex;align-items:center;justify-content:center;}
+.dev-home .project-image img {height:100%;width:100%;max-width:100%;object-fit:contain;display:block;}
+.dev-home .project-card .card-content {padding:24px 28px 27px;display:flex;flex:1;flex-direction:column;align-items:flex-start;}
+.dev-home .project-card h3 {font-size:22px;margin:0 0 8px;}
+.dev-home .project-card p {margin:0;color:var(--home-muted);font-size:14px;line-height:1.75;}
+.dev-home .project-card .tags {display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 22px;padding:0;}
+.dev-home .project-card .tags span {font-size:11px;color:#246e71;font-weight:650;background:#eaf5f4;border-radius:99px;padding:7px 11px;}
+.dev-home .project-card .card-content>a {display:inline-flex;gap:10px;color:#087f80;font-weight:750;font-size:13px;margin-top:auto;}
+.dev-home .project-card .card-content>a:hover {color:#066668;}
+/* Photo gallery: deliberately cropped + captions for uniform masonry-like editorial cards */
+.dev-home .gallery {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0;max-width:none;}
+.dev-home .gallery-tile {margin:0;position:relative;background:#f0f5f7;padding:0;overflow:hidden;border-radius:16px;aspect-ratio:1.27;box-shadow:0 7px 22px rgba(17,43,55,.065);}
+.dev-home .gallery-tile img {display:block;width:100%;height:100%;object-fit:cover;border:0;border-radius:0;box-shadow:none;transform:none;transition:transform .4s;}
+.dev-home .gallery-tile:hover img {transform:scale(1.035);}
+.dev-home .gallery-tile::after {content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(10,28,40,.65));pointer-events:none;}
+.dev-home .gallery-tile figcaption {position:absolute;left:20px;bottom:19px;z-index:1;color:#fff;font-size:14px;font-weight:700;letter-spacing:-.015em;}
+/* Editorial learning cards */
+.dev-home .article-grid,.dev-home .tutorial-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px;max-width:100%;}
+.dev-home .home-media {height:196px;background:#edf3f5;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #e2ebee;overflow:hidden;}
+.dev-home .home-media img {width:100%;height:100%;object-fit:contain;padding:12px;background:#edf3f5;border:0;border-radius:0;display:block;}
+.dev-home .article-card .card-content,.dev-home .tutorial-card .card-content {display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:23px 23px 20px;gap:0;}
+.dev-home .home-card-type {color:#087f80;letter-spacing:.13em;font-size:10px;font-weight:800;margin:0 0 12px;}
+.dev-home .article-card h3,.dev-home .tutorial-card h3 {font-size:19px;font-weight:760;line-height:1.37;margin:0 0 11px;letter-spacing:-.025em;}
+.dev-home .article-card .card-content>p,.dev-home .tutorial-card .card-content>p {font-size:13px;line-height:1.8;color:var(--home-muted);margin:0 0 20px;}
+.dev-home .home-card-meta {display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;margin-top:auto;padding-top:14px;border-top:1px solid #e2ebee;color:#63798a;font-size:12px;}
+.dev-home .home-rating {color:#a46a10;font-weight:750;}
+/* newsletter and contact are compact and purposeful */
+.dev-home .newsletter-section {background:#e9f5f4;text-align:center;}
+.dev-home .newsletter-section .section-container {width:min(100% - 40px,760px);margin:0 auto;max-width:760px;}
+.dev-home .newsletter-section .section-subtitle {margin:0 auto 26px;max-width:540px;}
+.dev-home .newsletter-form {display:flex;max-width:615px;margin:0 auto;gap:10px;}
+.dev-home .newsletter-form input {flex:1;min-width:0;min-height:51px;background:#fff;border:1px solid #cbdfe1;border-radius:9px;padding:12px 16px;color:#143044;font-size:14px;}
+.dev-home .newsletter-form input:focus {outline:3px solid rgba(8,127,128,.17);border-color:#087f80;}
+.dev-home .newsletter-form button {background:#087f80;color:#fff;border:none;border-radius:9px;min-height:51px;padding:0 25px;font-weight:750;font-size:13px;cursor:pointer;}
+.dev-home .newsletter-form button:hover {background:#066668;}
+.dev-home .newsletter-message:empty {display:none;}
+.dev-home .newsletter-message {font-size:13px;color:#086668;margin:14px 0 0;}
+.dev-home .contact-section {background:#fff;}
+.dev-home .contact-section .section-container {width:min(100% - 64px,1160px);max-width:1160px;margin:0 auto;}
+.dev-home .contact-section .section-subtitle {margin:0 0 23px;}
+.dev-home .contact-links {display:flex;flex-wrap:wrap;gap:10px;margin:0;}
+.dev-home .contact-button {display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 18px;border-radius:9px;border:1px solid #dce8ec;background:#f3f7f9;color:#203a4c;font-weight:650;font-size:13px;transition:background .2s,color .2s;}
+.dev-home .contact-button:first-child {background:#087f80;border-color:#087f80;color:#fff;}
+.dev-home .contact-button:hover {background:#066668;border-color:#066668;color:#fff;}
+/* Shared footer â€” no dummy policy links or flat teal block */
+.footer.site-footer {display:block;background:#112b38!important;color:#d6e5e8!important;padding:0;}
+.site-footer .footer-container {width:min(1160px,calc(100% - 64px));max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.8fr repeat(3,minmax(0,.8fr));gap:48px;padding:66px 0 56px;}
+.site-footer .footer-brand {min-width:0;}
+.site-footer .footer-logo {display:inline-block;color:#fff;font-size:23px;font-weight:800;letter-spacing:-.06em;margin-bottom:18px;}
+.site-footer .footer-logo span {color:#51c5be;}
+.site-footer .footer-brand p {margin:0 0 20px;max-width:320px;color:#acbec7;font-size:13px;line-height:1.9;}
+.site-footer .footer-mini {color:#55c9c0;font-size:10px;font-weight:750;letter-spacing:.14em;}
+.site-footer .footer-column {display:flex;flex-direction:column;align-items:flex-start;gap:12px;}
+.site-footer .footer-column h3 {color:#fff!important;margin:0 0 11px;font-size:13px;font-weight:750;letter-spacing:.015em;}
+.site-footer .footer-column a {color:#b4c6ce!important;line-height:1.55;font-size:13px;margin:0;text-decoration:none;}
+.site-footer .footer-column a:hover {color:#fff!important;text-decoration:underline;}
+.site-footer .footer-bottom {border-top:1px solid rgba(235,247,249,.14);width:min(1160px,calc(100% - 64px));max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:23px 0 29px;}
+.site-footer .footer-bottom p {margin:0;color:#9eb5c0;font-size:12px;}
+/* dark theme */
+html[data-theme="dark"] .dev-home {background:#111d27;color:#ecf5f6;--home-ink:#f1f7f8;--home-muted:#b3c9d2;}
+html[data-theme="dark"] .dev-home .home-hero {background:#111d27;}
+html[data-theme="dark"] .dev-home .home-hero-inner {background:#1e343e;border-color:#36545d;}
+html[data-theme="dark"] .dev-home .home-hero h1,html[data-theme="dark"] .dev-home h2,html[data-theme="dark"] .dev-home h3 {color:#edf6f7;}
+html[data-theme="dark"] .dev-home .home-hero-copy>p,html[data-theme="dark"] .dev-home .about-content p,html[data-theme="dark"] .dev-home .home-section-description,html[data-theme="dark"] .dev-home .section-subtitle {color:#b3c9d2;}
+html[data-theme="dark"] .dev-home .about-section,html[data-theme="dark"] .dev-home .gallery-section,html[data-theme="dark"] .dev-home .tutorials-section,html[data-theme="dark"] .dev-home .contact-section {background:#111d27;}
+html[data-theme="dark"] .dev-home .work-section,html[data-theme="dark"] .dev-home .articles-section {background:#172630;}
+html[data-theme="dark"] .dev-home .project-card,html[data-theme="dark"] .dev-home .article-card,html[data-theme="dark"] .dev-home .tutorial-card {background:#203640;border-color:#3c5763;}
+html[data-theme="dark"] .dev-home .project-image,html[data-theme="dark"] .dev-home .home-media,html[data-theme="dark"] .dev-home .home-media img {background:#273e48;border-color:#3c5763;}
+html[data-theme="dark"] .dev-home .project-card p,html[data-theme="dark"] .dev-home .article-card p,html[data-theme="dark"] .dev-home .tutorial-card p {color:#b9ced5;}
+html[data-theme="dark"] .dev-home .newsletter-section {background:#1a373f;}
+html[data-theme="dark"] .dev-home .newsletter-form input {background:#203b46;border-color:#44636d;color:#f4f8f8;}
+html[data-theme="dark"] .dev-home .contact-button {background:#243d47;border-color:#3b5661;color:#e6f2f3;}
+/* responsive typography and layout */
+@media(max-width:1120px){.dev-home .home-hero-inner {grid-template-columns:1fr 1fr;}.dev-home .home-hero h1 {font-size:clamp(40px,4.6vw,58px);}.site-footer .footer-container {grid-template-columns:1.4fr repeat(3,minmax(0,.8fr));gap:27px;}}
+@media(max-width:800px){.dev-home .home-hero-inner {grid-template-columns:1fr;}.dev-home .home-hero-copy {padding:45px 35px;}.dev-home .home-hero-image {min-height:300px;}.dev-home .about-layout {grid-template-columns:220px 1fr;gap:30px;}.dev-home .article-grid,.dev-home .tutorial-grid {grid-template-columns:repeat(2,minmax(0,1fr));}.site-footer .footer-container {grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.dev-home .home-shell {width:calc(100% - 36px);}.dev-home .home-hero {padding:16px 12px 0;}.dev-home .home-hero-inner {border-radius:18px;}.dev-home .home-hero-copy {padding:40px 24px;}.dev-home .home-hero h1 {font-size:clamp(37px,10vw,49px);}.dev-home .home-hero-image {min-height:235px;}.dev-home .about-layout {grid-template-columns:1fr;}.dev-home .about-portrait {width:240px;max-width:100%;margin:auto;aspect-ratio:1;}.dev-home .project-grid,.dev-home .article-grid,.dev-home .tutorial-grid,.dev-home .gallery {grid-template-columns:1fr;gap:17px;}.dev-home .gallery-tile {aspect-ratio:1.2;}.dev-home .project-image {height:220px;}.dev-home .home-section-heading {margin-bottom:25px;}.dev-home .newsletter-form {flex-direction:column;}.dev-home .newsletter-form button {width:100%;}.dev-home .contact-section .section-container {width:calc(100% - 36px);}.site-footer .footer-container {width:calc(100% - 40px);padding:44px 0;grid-template-columns:1fr 1fr;gap:30px 17px;}.site-footer .footer-brand {grid-column:1/-1;}.site-footer .footer-bottom {width:calc(100% - 40px);flex-direction:column;align-items:flex-start;gap:9px;}}
+@media(prefers-reduced-motion:reduce){.dev-home .project-card,.dev-home .article-card,.dev-home .tutorial-card,.dev-home .gallery-tile img,.dev-home .home-btn {transition:none!important;transform:none!important;}}
+
+
+/* ===========================================================
+   HOMEPAGE LAYOUT STABILITY FIX â€” 18 NOV 2026
+   The Vite starter index.css limited #root to 1126px, centered
+   all text and introduced dark system colours. Previous styles
+   also competed with the original homepage CSS.
+   These rules deliberately override those legacy constraints.
+   =========================================================== */
+html, body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+#root {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: left !important;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.dev-home {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  margin: 0 !important;
+  text-align: left !important;
+  overflow-x: clip;
+}
+.dev-home .home-shell,
+.dev-home .section-container {
+  width: min(1160px, calc(100% - 48px)) !important;
+  max-width: 1160px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Force About to stay as a well-sized portrait + text, even
+   when legacy .about-container or img rules are also loaded. */
+.dev-home #about .about-layout,
+.dev-home .about-section .about-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  justify-items: stretch !important;
+  gap: clamp(32px, 5vw, 90px) !important;
+  width: min(1080px, calc(100% - 48px)) !important;
+  max-width: 1080px !important;
+  margin-inline: auto !important;
+}
+.dev-home #about .about-portrait,
+.dev-home .about-section .about-portrait {
+  display: block !important;
+  position: relative;
+  overflow: hidden !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 300px !important;
+  height: 355px !important;
+  min-height: 0 !important;
+  max-height: 355px !important;
+  aspect-ratio: auto !important;
+  padding: 8px !important;
+  margin: 0 !important;
+  border: 1px solid #dce9eb;
+  border-radius: 20px !important;
+  background: #edf5f5;
+  box-shadow: 0 14px 34px rgba(16, 54, 65, .08);
+}
+.dev-home #about .about-portrait > img,
+.dev-home .about-section .about-portrait > img {
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  aspect-ratio: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 13px !important;
+  box-shadow: none !important;
+}
+.dev-home #about .about-content {
+  display: block !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.dev-home #about .about-content h2 {
+  font-size: clamp(30px, 3.7vw, 48px) !important;
+  line-height: 1.15 !important;
+  margin: 0 0 18px !important;
+}
+.dev-home #about .about-content p {
+  max-width: 620px;
+  line-height: 1.75 !important;
+}
+
+/* Restore consistent grids and image heights if older styles win. */
+.dev-home .project-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+.dev-home .article-grid,
+.dev-home .tutorial-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+}
+.dev-home .gallery {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  width: 100% !important;
+}
+.dev-home .project-image img,
+.dev-home .home-media img,
+.dev-home .gallery-tile img {
+  max-width: 100% !important;
+  display: block !important;
+}
+.dev-home .gallery-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.3 !important;
+}
+.dev-home .gallery-tile img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Theme applies only when explicitly selected, not OS default. */
+html:not([data-theme="dark"]) .dev-home {
+  color-scheme: light;
+  background: #fff;
+}
+html[data-theme="dark"] .dev-home #about .about-portrait {
+  background: #223943 !important;
+  border-color: #3c5864 !important;
+}
+
+@media (max-width: 800px) {
+  .dev-home #about .about-layout,
+  .dev-home .about-section .about-layout {
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+  .dev-home #about .about-portrait,
+  .dev-home .about-section .about-portrait {
+    max-width: 220px !important;
+    height: 280px !important;
+    max-height: 280px !important;
+  }
+  .dev-home .article-grid,
+  .dev-home .tutorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 620px) {
+  .dev-home #about .about-layout,
+  .dev-home .about-section .about-layout {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    width: calc(100% - 36px) !important;
+  }
+  .dev-home #about .about-portrait,
+  .dev-home .about-section .about-portrait {
+    max-width: 235px !important;
+    height: 285px !important;
+    max-height: 285px !important;
+    margin-inline: auto !important;
+  }
+  .dev-home #about .about-content {
+    max-width: 100% !important;
+  }
+  .dev-home .project-grid,
+  .dev-home .article-grid,
+  .dev-home .tutorial-grid,
+  .dev-home .gallery {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* ======================================================
+   FINAL SHARED NAVBAR â€” SAME NAVY BG IN BOTH THEMES
+   Light: pale buttons | Dark: transparent buttons
+   Mobile: collapsing hamburger; original routes preserved
+   Requires Header.jsx classes: navbar site-header,
+   site-header-inner, nav-actions site-nav, is-open.
+====================================================== */
+
+header.navbar.site-header {
+  display: block !important;
+  position: relative;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 76px;
+  height: auto;
+  margin: 0;
+  padding: 12px clamp(18px, 3vw, 56px);
+  background: #142b36 !important;
+  border-bottom: 1px solid #35505e !important;
+  box-shadow: none;
+}
+
+.site-header .site-header-inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-header .logo { flex-shrink: 0; }
+.site-header .logo a {
+  color: #f3fafb !important;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.05em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .nav-actions.site-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* Light theme buttons: original pale filled appearance */
+.site-header .nav-actions.site-nav .post-button,
+.site-header .nav-actions.site-nav button.post-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  min-height: 42px;
+  height: auto;
+  margin: 0;
+  padding: 10px 17px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #f2f3f5 !important;
+  color: #192435 !important;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease,
+              border-color .2s ease, transform .2s ease;
+}
+
+.site-header .nav-actions.site-nav .post-button:hover,
+.site-header .nav-actions.site-nav button.post-button:hover {
+  background: #d6eeee !important;
+  color: #006d70 !important;
+  transform: translateY(-1px);
+}
+
+/* Theme colours may also be set by a body/html class in a legacy stylesheet. */
+html[data-theme="dark"] header.navbar.site-header {
+  background: #142b36 !important;
+  border-bottom-color: #35505e !important;
+}
+html[data-theme="dark"] .site-header .logo a { color: #f3fafb !important; }
+
+/* Dark theme buttons: original transparent text + hover */
+html[data-theme="dark"] .site-header .nav-actions.site-nav .post-button,
+html[data-theme="dark"] .site-header .nav-actions.site-nav button.post-button {
+  background: transparent !important;
+  color: #e4edf2 !important;
+  border-color: transparent;
+}
+html[data-theme="dark"] .site-header .nav-actions.site-nav .post-button:hover,
+html[data-theme="dark"] .site-header .nav-actions.site-nav button.post-button:hover {
+  background: rgba(255,255,255,.11) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.12);
+}
+html[data-theme="dark"] .site-header .nav-actions.site-nav .theme-toggle {
+  background: rgba(255,255,255,.07) !important;
+  border-color: #45616a;
+}
+
+/* The logout component may use its own button class. */
+.site-header .nav-logout { display: flex; align-items: center; }
+
+/* Hamburger is not visible on desktop. */
+.site-header .mobile-menu-toggle { display: none; }
+
+@media (max-width: 900px) {
+  header.navbar.site-header {
+    padding: 13px 18px !important;
+    min-height: 68px;
+  }
+  .site-header .site-header-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .site-header .logo { flex: 1; min-width: 0; }
+  .site-header .logo a { font-size: 23px; }
+
+  .site-header .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #45616a;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  .site-header .mobile-menu-toggle:hover,
+  .site-header .mobile-menu-toggle:focus-visible {
+    background: rgba(255,255,255,.1);
+  }
+
+  /* Hidden until menuOpen=true adds is-open via Header.jsx. */
+  .site-header .nav-actions.site-nav {
+    display: none;
+    flex: 0 0 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 9px;
+    margin-top: 14px;
+    padding: 15px 0 6px;
+    border-top: 1px solid rgba(255,255,255,.18);
+  }
+  .site-header .nav-actions.site-nav.is-open { display: flex; }
+  .site-header .nav-actions.site-nav .post-button,
+  .site-header .nav-actions.site-nav button.post-button {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .site-header .nav-logout,
+  .site-header .nav-logout button { width: 100%; }
+}
